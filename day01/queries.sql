@@ -25,3 +25,13 @@ Where score BETWEEN 80 AND 90;
 SELECT name, score
 FROM students
 WHERE name IN ('Anu', 'Dev');
+
+--Q6: Students scoring below 70 OR above 90 (outside the range)
+SELECT name, score
+FROM students
+WHERE score > 80 OR score <90;
+
+-- Alternative: same result using NOT BETWEEN
+-- SELECT name, score
+-- FROM students
+-- WHERE score NOT BETWEEN 70 AND 90;
