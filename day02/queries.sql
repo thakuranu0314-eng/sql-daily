@@ -18,3 +18,9 @@ FROM students
 WHERE score < 90
 ORDER BY score DESC
 LIMIT 1;
+
+-- Q4: The single lowest-scoring student
+SELECT name, score
+FROM students
+ORDER BY score ASC
+LIMIT 1:
