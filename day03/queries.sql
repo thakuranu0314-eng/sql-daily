@@ -21,3 +21,15 @@ SELECT class, AVG(score) AS avg_score
 FROM students
 GROUP BY class
 HAVING AVG(score) > 80;
+
+# Day 3 — Aggregations & GROUP BY
+- Aggregates (COUNT, AVG, SUM, MIN, MAX) collapse many rows into one value
+- GROUP BY = split-apply-combine, same as pandas df.groupby()
+- Rule: every SELECT column must be in GROUP BY or inside an aggregate
+- WHERE filters ROWS (before grouping); HAVING filters GROUPS (after)
+- Full order: FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY -> LIMIT
+
+-- Q5: Lowest score in each class
+SELECT class, MIN(score) AS lowest_score
+FROM students
+GROUP BY class;
