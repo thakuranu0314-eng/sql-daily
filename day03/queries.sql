@@ -33,3 +33,8 @@ HAVING AVG(score) > 80;
 SELECT class, MIN(score) AS lowest_score
 FROM students
 GROUP BY class;
+
+-- Q6: Among students who scored above 70, the average per class
+SELECT class, MIN(score) AS lowest_score
+FROM students
+GROUP BY class;
