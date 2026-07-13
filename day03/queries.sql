@@ -34,7 +34,15 @@ SELECT class, MIN(score) AS lowest_score
 FROM students
 GROUP BY class;
 
--- Q6: Among students who scored above 70, the average per class
-SELECT class, MIN(score) AS lowest_score
+-- Q6: Highest score in each class
+SELECT class, MAX(score) AS highest_score
 FROM students
+GROUP BY class;
+
+-- Q7: Among students who scored above 70, average score per class
+-- WHERE, not HAVING: "scored above 70" is checkable on a single row,
+-- so it filters rows BEFORE grouping happens
+SELECT class, AVG(score) AS avg_score
+FROM students
+WHERE score > 70
 GROUP BY class;
